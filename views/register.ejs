@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../views/partials/head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../views/partials/header'); %>
+    </header>
+
+    <main>
+        <div class="row">
+            <div class="col-4">
+                <h2>Categories</h2>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="/">All products</a></li>
+                    <% categories.forEach(function(category) { %>
+                        <li class="list-group-item">
+                            <a href="/categories/<%= category.slug %>">
+                                <%= category.title %>
+                            </a>
+                        </li>
+                        <% }); %>
+                </ul>
+            </div>
+            <div class="col-8">
+                <% if (message.length > 0) { %>
+                    <div class="alert alert-danger">
+                        <%= message %>
+                    </div>
+                    <% } %>
+                        <h1>Register</h1>
+                        <form action="/register" method="post">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username_field" name="username" placeholder="Enter username">
+                            </div>
+                            <div class="form-group">
+                                <label for="normalname">Normal name</label>
+                                <input type="text" class="form-control" id="normalname_field" name="normalname" placeholder="Enter normal name">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password_field" name="password" placeholder="Password">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../views/partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>

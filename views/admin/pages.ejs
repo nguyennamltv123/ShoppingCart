@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../partials/admin_header'); %>
+    </header>
+
+    <main>
+        <h1 style="text-align: center;">Pages</h1>
+        <a href="/admin/pages/add-page"><button type="button" class="btn btn-primary">Add a page</button></a>
+        <hr>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Slug</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% pages.forEach(function(page) {%>
+                    <tr>
+                        <th scope="row">
+                            <%= page.title %>
+                        </th>
+                        <td>
+                            <%= page.slug %>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <a href="/admin/pages/edit-page/<%= page.slug %>"><button type="button" class="btn btn-info">Edit</button></a>
+                        </td>
+                        <td>
+                            <form method="post" action="/admin/pages/delete-page/<%= page._id %>?_method=DELETE" onsubmit="return confirm('You really want to delete?');">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+        <!-- <% pages.forEach(function(page) {%>
+                <li class="list-group-item">
+                    <%= page.title %>
+                </li>
+                <% }); %> -->
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>

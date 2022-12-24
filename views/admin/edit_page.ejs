@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../partials/admin_header'); %>
+    </header>
+
+    <main>
+        <% if (message.length > 0) { %>
+            <div class="alert alert-danger">
+                <%= message %>
+            </div>
+            <% } %>
+                <h1 style="text-align: center;">Edit page</h1>
+                <a href="/admin/pages"><button type="button" class="btn btn-secondary">Come back to pages</button></a>
+                <hr>
+                <form method="post" action="/admin/pages/edit-page/<%= page._id %>?_method=PUT">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title_field" name="title" placeholder="Enter title" value="<%= page.title %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="slug">Slug</label>
+                        <input type="slug" class="form-control" id="slug_field" name="slug" placeholder="Enter slug" value="<%= page.slug %>" disabled="true">
+                    </div>
+                    <button type="submit" class="btn btn-success">Save changes</button>
+                </form>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>

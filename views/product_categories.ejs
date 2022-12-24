@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../views/partials/head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <% if (user && user.role == true) { %>
+            <%- include('../views/partials/admin_header'); %>
+                <% } else { %>
+                    <%- include('../views/partials/header'); %>
+                        <% } %>
+    </header>
+
+    <main>
+        <div class="row">
+            <div class="col-3">
+                <h2>Categories</h2>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="/">All products</a></li>
+                    <% categories.forEach(function(category) { %>
+                        <li class="list-group-item">
+                            <a href="/categories/<%= category.slug %>">
+                                <%= category.title %>
+                            </a>
+                        </li>
+                        <% }); %>
+                </ul>
+            </div>
+            <div class="col-9">
+                <h2 style="text-align: center;">Categories</h2>
+                <% products.forEach(function(product) { %>
+                    <div class="card" style="width: 17rem; display: inline-block; height: fit-content;">
+                        <img class="card-img-top" src="/product_images/<%= product._id %>.png" id="productImage" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= product.name %>
+                            </h5>
+                            <h6>Price:
+                                <%= product.price %>$
+                            </h6>
+                            <a href="/categories/category=<%= product.category %>&product=<%= product._id%>" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                    <% }); %>
+            </div>
+        </div>
+    </main>
+
+    <!-- <footer>
+        <%- include('../views/partials/footer'); %>
+    </footer> -->
+
+</body>
+
+</html>

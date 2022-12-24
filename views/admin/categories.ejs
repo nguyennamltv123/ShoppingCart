@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../partials/admin_header'); %>
+    </header>
+
+    <main>
+        <h1 style="text-align: center;">Categories</h1>
+        <a href="/admin/categories/add-category"><button type="button" class="btn btn-primary">Add a category</button></a>
+        <hr>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Slug</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% categories.forEach(function(category) {%>
+                    <tr>
+                        <th scope="row">
+                            <%= category.title %>
+                        </th>
+                        <td>
+                            <%= category.slug %>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <a href="/admin/categories/edit-category/<%= category.slug %>"><button type="button" class="btn btn-info">Edit</button></a>
+                        </td>
+                        <td>
+                            <form method="post" action="/admin/categories/delete-category/<%= category._id %>?_method=DELETE" onsubmit="return confirm('You really want to delete?');">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>

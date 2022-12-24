@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../partials/admin_header'); %>
+    </header>
+
+    <main>
+        <% if (message.length > 0) { %>
+            <div class="alert alert-danger">
+                <%= message %>
+            </div>
+            <% } %>
+                <h1 style="text-align: center;">Add a product</h1>
+                <a href="/admin/products"><button type="button" class="btn btn-secondary">Come back to products</button></a>
+                <hr>
+                <form method="post" action="/admin/products/add-product" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name_field" name="name" placeholder="Enter product name">
+                    </div>
+                    <div class="form-group">
+                        <label for="describe">Describe</label>
+                        <textarea name="describe" class="form-control" id="describe_field" cols="30" rows="5" placeholder="Enter describe"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price ($)</label>
+                        <input type="number" min="1" class="form-control" id="price_field" name="price" placeholder="Enter product price">
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select name="category" id="category_field" class="form-control">
+                            <% categories.forEach(function(category) { %>
+                                <option value="<%= category.slug %>"><%= category.title %></option>
+                            <% }); %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image</label>
+                        <input type="file" id="imgInput" class="form-control" name="productImage" />
+                        <br>
+                        <label for="">Image preview: </label>
+                        <img id="imgPreview" src="#" alt="Photo" />
+                    </div>
+                    <button type="submit" class="btn btn-success" onclick="return checkEmpty()">Add product</button>
+                </form>
+
+
+                <script>
+                    document.getElementById("imgInput").onchange = evt => {
+                        const [file] = imgInput.files
+                        if (file) {
+                            imgPreview.src = URL.createObjectURL(file)
+                        }
+                    }
+
+                    function checkEmpty() {
+                        if (document.getElementById('name_field').value === '' || document.getElementById('describe_field').value === '' || Number(document.getElementById('price_field').value) <= 0 || document.getElementById("imgInput").files.length == 0) {
+                            alert("Please fill out all text field!");
+                            return false;
+                        }
+                    }
+                </script>
+    </main>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>

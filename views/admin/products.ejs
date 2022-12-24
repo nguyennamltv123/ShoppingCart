@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../partials/admin_header'); %>
+    </header>
+
+    <main>
+        <h1 style="text-align: center;">Products</h1>
+        <a href="/admin/products/add-product"><button type="button" class="btn btn-primary">Add a product</button></a>
+        <hr>
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Describe</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Category</th>
+                    <th scope="col"></th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% products.forEach(function(product) { %>
+                    <tr>
+                        <th scope="row">
+                            <%= product.name %>
+                        </th>
+                        <td>
+                            <%= product.describe %>
+                        </td>
+                        <td>
+                            <%= product.price %>$
+                        </td>
+                        <td><img style="width: 70px; height: 70px;" src="/product_images/<%= product._id %>.png" alt="Photo"></td>
+                        <td>
+                            <%= product.category %>
+                        </td>
+                        <td></td>
+                        <td>
+                            <a href="/admin/products/edit-product/<%= product._id %>"><button type="button" class="btn btn-info">Edit</button></a>
+                        </td>
+                        <td>
+                            <form method="post" action="/admin/products/delete-product/<%= product._id %>?_method=DELETE" onsubmit="return confirm('You really want to delete?');">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>
