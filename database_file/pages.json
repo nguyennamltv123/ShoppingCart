@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "6347b6d1dfbba2f00ccd9d5a"
+  },
+  "title": "About us",
+  "slug": "about-us"
+},{
+  "_id": {
+    "$oid": "6348152a10aeffcdf35742c7"
+  },
+  "title": "Contact us",
+  "slug": "contact-us",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665668394855"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665671668051"
+    }
+  },
+  "__v": 0
+}]

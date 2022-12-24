@@ -1,0 +1,58 @@
+[{
+  "_id": {
+    "$oid": "63468ce19bb893a462f1bdad"
+  },
+  "username": "tri",
+  "normalname": "TRI",
+  "password": "$2a$10$nExbAuJR7xOk35mPfZ1Uf.24Fx025W5zSsQjBpsGwiYkZhA/jeoZm",
+  "role": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665567969967"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665567969967"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6347998e8048889178271f04"
+  },
+  "username": "admin",
+  "normalname": "ADMIN",
+  "password": "$2a$10$.MDeLfJleOo/PnNRVzaQiOWwbCE11vI6DdwjGluX2EhR8LM7Ae6Au",
+  "role": true,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665636750809"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665636750809"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "634c018fba53dfc7d25ac680"
+  },
+  "username": "nam",
+  "normalname": "Nam Tran Nguyen",
+  "password": "$2a$10$Qhyoy8oCR.6Wt8vLVYMARu/FnBaM8L07rT6A438IDPBvbvrZGfAkC",
+  "role": false,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665925519888"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665925519888"
+    }
+  },
+  "__v": 0
+}]

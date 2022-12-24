@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "634824ad347d13adf607879a"
+  },
+  "title": "Smart-phones",
+  "slug": "smart-phones",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665672365549"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665672365549"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "634cdb556e379cb3f50387cb"
+  },
+  "title": "Laptops",
+  "slug": "laptops",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665981269265"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665981269265"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "634d6695b58f90ffc97c4e4d"
+  },
+  "title": "Keyboards",
+  "slug": "keyboards",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1666016917585"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1666016917585"
+    }
+  },
+  "__v": 0
+}]

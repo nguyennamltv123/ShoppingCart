@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "634cdec62d68516bfea42220"
+  },
+  "name": "Iphone 14 Pro Max",
+  "describe": "Color: Purple\r\nRAM: 6 Gb\r\nStorage: 256 Gb\r\nScreen: 6.7 inches, OLED",
+  "price": 1299,
+  "image": "iphone14promax.jpg",
+  "category": "smart-phones",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1665982150892"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1665982150892"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "634d44de5c20d26d42b4a8e5"
+  },
+  "name": "Lenovo Legion 5",
+  "describe": "Screen: 15.6 inches, Full HD\r\nRAM: 8Gb\r\nStorage: 512Gb SSD\r\nCPU: Ryzen 7 5800H",
+  "price": 1500,
+  "image": "legion5.jpg",
+  "category": "laptops",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1666008286306"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1666008286306"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "634d45805c20d26d42b4a8f4"
+  },
+  "name": "MSI GF65",
+  "describe": "Screen: 15.6 inches, Full HD\r\nRAM: 16Gb\r\nGPU: Intel core I7 12700H\r\nStorage: 1Tb SSD",
+  "price": 1800,
+  "image": "msi.jpg",
+  "category": "laptops",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1666008448563"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1666008448563"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "634d671db58f90ffc97c4e56"
+  },
+  "name": "EDRA Keyboard EK387",
+  "describe": "Keycaps: ABS Double-shot\r\nLeds: Rainbow\r\nConnection: Bluetooth",
+  "price": 88,
+  "image": "banphimcoedra.jpg",
+  "category": "keyboards",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1666017053145"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1666017053145"
+    }
+  },
+  "__v": 0
+}]
